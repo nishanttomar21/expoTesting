@@ -1,11 +1,16 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Provider as PaperProvider, Button } from 'react-native-paper';
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+        <PaperProvider>
+          <Button mode="contained">
+            Press Me!
+          </Button>
+        </PaperProvider>
       </View>
     );
   }
