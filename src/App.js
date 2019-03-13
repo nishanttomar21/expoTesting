@@ -1,26 +1,22 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Provider as PaperProvider, Button } from 'react-native-paper';
+import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
+import AppContainer from "./navigation/navigation";
+
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: 'tomato',
+    accent: 'yellow',
+  },
+};
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <PaperProvider>
-          <Button mode="contained">
-            Press Me!
-          </Button>
-        </PaperProvider>
-      </View>
+      <PaperProvider theme={theme}>
+        <AppContainer />
+      </PaperProvider>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
